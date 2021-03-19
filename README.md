@@ -10,7 +10,7 @@
 
 This is a website for a specialty foods company to showcase their products and allow for customers to review them.
 
-![Table Schema](/public/img/specialt_foods.png)
+![Table Schema](/public/img/specialty_foods.png)
 * * *
 
 ## Technologies used
@@ -27,7 +27,7 @@ This is a website for a specialty foods company to showcase their products and a
 * CSS
 * Bundler
 * git
-* Rubocop
+* Faker
 * C8H10N4O2
 
 * * *
@@ -37,10 +37,16 @@ This is a website for a specialty foods company to showcase their products and a
 Initial Specs:
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| Should allow a user to input a product with a name, cost, and county of origin  | Apple, 1.99, United States | Product appears in a clickable list. |
+| Should allow a user to input a product with a name, price, and county of origin  | Apple, 1.99, United States | Product appears in a clickable list. |
 | Should allow a user to input a review for a product with an author, content, and rating | name: Jane, review: "These apples were amazing. They were juicy with a crisp taste", 5 | Review will show up on product with rating |
-| Users should have ability to update products entered | Click Update on the product page | This allows the user to update product information for all fields |
+| Users should have ability to update product names entered | original Product: Apple, new name: Oranges | Oranges will show on the product page |
+| Users should have ability to update product prices entered | original price: 1.99, new price: 2.99 | The product's price will be updated to 2.99 |
+| Users should have ability to update product country entered | original country: United States, new name: Japan | Japan will show as the country of origin on product page |
+| Users should have ability to update review authors entered | original author: Jane, new author: Jennifer | Jennifer will show on the product page |
+| Users should have ability to update review ratings entered | original review: 3, new review: 5 | Review rating of 5 will show when rating is clicked on|
+| Users should have ability to update review content entered | original content: These apples were super delicious!, new content: These apples were super delicious and I loved the color! | clicking on the review will show the updated content body |
 | Users should have ability to delete products entered | click Delete on the product page | This removes the product and associated reviews from the products page and DB |
+| Users should have ability to delete reviews entered | click Delete on the review page | This removes the review from the products page and DB |
 | Users should be able to see details of a product when clicking on it | Click on the Apples | This brings up a page for Apples and shows all of the details and reviews |
 | Should have validation checks for all fields being filled out, including rating | Apples entered a second time | This will throw and error any time a user attempts to do double entry of an item |
 | Review content should be between 50 and 250 characters | User attempts to enter a review of 10 characters  | This will keep the user from saving their review because it isn't within greater than 50 characters |
@@ -128,6 +134,9 @@ rake db:migrate
 ``` bash
 rake db:test:prepare
 ```
+``` bash
+rake db:seed
+```
 
 * To launch a local version of the site in your browser enter the following:
 
@@ -139,12 +148,7 @@ This will launch a local host via Rails. You should be able to navigate to http:
 
 ## To dos
 
-* Pre-seed database with faker with 50 products and 250 reviews.
 * Make site look nice with CSS
-* Integration testing for routes
-* Unit testing
-* Products database
-* Reviews database
 
 ## Bugs
 
