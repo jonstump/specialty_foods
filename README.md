@@ -10,7 +10,7 @@
 
 This is a website for a specialty foods company to showcase their products and allow for customers to review them.
 
-![Table Schema](/public/img/ *image file here*)
+![Table Schema](/public/img/specialt_foods.png)
 * * *
 
 ## Technologies used
