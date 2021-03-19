@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     create_table :products do |t|
       t.string :name
       t.decimal :price
-      t.county_of_origin :string
+      t.string :county_of_origin
 
       t.timestamps
     end
