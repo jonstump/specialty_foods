@@ -9,6 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <% content_for(:navbar) do %>
+    <li><a href="/">Home</a></li>
+    <li><a href="/prodcuts">Products</a></li>
+    <li><a href="/products/new">New Product</a></li>
+    <li><a href="/review/new">New Reviews</a></li>
+  <% end %>
+
   <body>
     <%= yield %>
   </body>

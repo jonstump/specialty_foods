@@ -5,11 +5,11 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :country_of_origin, presence: true
 
-  before_save(:titleize_recipe, presence: name, uniqueness: true)
+  before_save(:titleize_product, presence: name, uniqueness: true)
 
   private
 
-  def titleize_recipe
+  def titleize_product
     self.name = self.name.titleize
   end
 end
