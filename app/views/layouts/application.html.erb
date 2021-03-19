@@ -16,10 +16,15 @@
     <li><a href="/review/new">New Reviews</a></li>
   <% end %>
 
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
-
   <body>
-    <%= yield %>
+    <div id="navbar">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+    </div>
+    <div class="container">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      <%= yield %>
+    </div>
   </body>
 </html>
