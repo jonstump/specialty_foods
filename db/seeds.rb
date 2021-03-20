@@ -20,7 +20,7 @@ Review.destroy_all
     review = Review.create!(author: Faker::DcComics.name,
                             product_id: product.id,
                             rating: Faker::Number.between(from: 1, to: 5),
-                             content_body: Faker::Lorem.paragraph_by_chars(number: 150, supplemental: false))
+                            content_body: Faker::Lorem.paragraph_by_chars(number: 150, supplemental: false))
   end
 end
 
