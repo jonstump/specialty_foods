@@ -22,7 +22,6 @@ This is a website for a specialty foods company to showcase their products and a
 * Rails
 * Neovim
 * Postgres
-* Bootstrap
 * HTML
 * CSS
 * Bundler
@@ -49,9 +48,9 @@ Initial Specs:
 | Users should have ability to delete products entered | click Delete on the product page | This removes the product and associated reviews from the products page and DB |
 | Users should have ability to delete reviews entered | click Delete on the review page | This removes the review from the products page and DB |
 | Users should be able to see details of a product when clicking on it | Click on the Apples | This brings up a page for Apples and shows all of the details and reviews |
-| Should have validation checks for all fields being filled out, including rating | Apples entered a second time | This will throw and error any time a user attempts to do double entry of an item |
+| Should have validation checks for all fields are filled out, including rating | Apples entered a second time | This will throw and error any time a user attempts to do double entry of an item |
 | Review content should be between 50 and 250 characters | User attempts to enter a review of 10 characters  | This will keep the user from saving their review because it isn't within greater than 50 characters |
-| All product titles should be automatically capitalized | Entry of apples | Product should be shown as Apples. |
+| All product titles should be automatically capitalized | Entry of apples | Product should will show as Apples. |
 
 * * *
 
@@ -149,11 +148,18 @@ This will launch a local host via Rails. You should be able to navigate to http:
 
 ## To dos
 
-* Make site look nice with CSS
+* Figure out how to install bootstrap.
 
 ## Bugs
 
-* None at this time. If you find a bug please use the contact email below.
+* Bootstrap gem and its dependencies will not install properly.
+
+## Resources
+* [Smallville Wiki](https://smallville.fandom.com/wiki/Kent_Farm)
+* [DC Comics](https://www.dccomics.com/)
+* [w3Schools](https://www.w3schools.com/)
+* [Coolors](https://coolors.co/f7ebec-ddbdd5-ac9fbb-59656f-1d1e2c)
+* [stackoverflow](https://stackoverflow.com/)
 
 * * *
 
