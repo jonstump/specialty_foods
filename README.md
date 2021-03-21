@@ -27,6 +27,7 @@ This is a website for a specialty foods company to showcase their products and a
 * CSS
 * Bundler
 * git
+* Rubocop
 * Faker
 * C8H10N4O2
 

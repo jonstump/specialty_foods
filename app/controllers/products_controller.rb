@@ -1,3 +1,4 @@
+# Controller class for products
 class ProductsController < ApplicationController
   def index
     @products = Product.all
@@ -30,7 +31,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product= Product.find(params[:id])
+    @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:notice] = 'Product successfully updated'
       redirect_to products_path
@@ -51,5 +52,4 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :price, :country_of_origin)
   end
-
 end

@@ -1,3 +1,4 @@
+# Controller class for reviews that are associated with products.
 class ReviewsController < ApplicationController
   def new
     @product = Product.find(params[:product_id])
