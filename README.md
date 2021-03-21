@@ -1,4 +1,4 @@
-# Ruby Rails with Active Record Project for Epicodus: Specialty Foods
+# Ruby Rails with Active Record Project for Epicodus: Specialty Foods - "Kent Farms"
 
 #### By Jon Stump
 
@@ -8,7 +8,7 @@
 
 ## Description
 
-This is a website for a specialty foods company to showcase their products and allow for customers to review them.
+This is a website for "Kent Farms" to showcase their products and allow for customers to review them.
 
 ![Table Schema](/public/img/specialty_foods.png)
 * * *
