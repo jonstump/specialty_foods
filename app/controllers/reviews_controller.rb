@@ -1,5 +1,7 @@
 # Controller class for reviews that are associated with products.
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
@@ -9,6 +11,7 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
+    @review[:user_id] = current_user.id
     if @review.save
       flash[:notice] = 'Review successfully added'
       redirect_to product_path(@product)
@@ -50,6 +53,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:author, :rating, :content_body)
+    params.require(:review).permit(:rating, :content_body)
   end
 end
