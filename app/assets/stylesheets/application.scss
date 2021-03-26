@@ -16,6 +16,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.jumbotron, {
+  background-color: #2e86ab;
+  color: #f6f5ae;
+}
+
 body {
   background-color: #F4F1DE;
 }
