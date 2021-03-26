@@ -8,7 +8,8 @@ Review.destroy_all
                             price: Faker::Number.decimal(l_digits: 2),
                             country_of_origin: Faker::Address.country)
   5.times do
-    review = Review.create!(author: Faker::DcComics.name,
+    user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password)
+    review = Review.create!(user_id: user.id,
                             product_id: product.id,
                             rating: Faker::Number.between(from: 1, to: 5),
                             content_body: Faker::Lorem.paragraph_by_chars(number: 150, supplemental: false))
