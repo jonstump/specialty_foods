@@ -8,7 +8,7 @@
   <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
+        <%= link_to review.user_id, product_review_path(@product, review) %>
       </li>
     </ul>
   <% end %>
@@ -17,11 +17,14 @@
 <% end %>
 
 <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+
+<% if current_user && current_user.admin %>
 <p><%= link_to "Edit", edit_product_path(@product) %></p>
+
 <p><%= link_to "Delete", product_path(@product),
                         :data => {:confirm => "You sure?",
                                   :method => "delete"} %></p>
-
+<% end %>
 <p><%= link_to "Return to products", products_path %></p>
 
 

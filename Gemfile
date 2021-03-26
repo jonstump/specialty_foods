@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.5'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# Bootstrap gem
+gem 'bootstrap-sass', '~> 3.4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,7 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# Devise gem for authentication
+gem 'devise'
 # jquery rails gem
 gem 'jquery-rails'
 
@@ -41,6 +44,9 @@ gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# Rails admin gem for administration of site
+gem 'rails_admin', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +68,7 @@ end
 group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

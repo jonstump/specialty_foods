@@ -10,7 +10,7 @@
 
 This is a website for "Kent Farms" to showcase their products and allow for customers to review them.
 
-![Table Schema](/public/img/specialty_foods.png)
+![Table Schema](/public/img/kent_farms_schema.png)
 * * *
 
 ## Technologies used
@@ -28,6 +28,9 @@ This is a website for "Kent Farms" to showcase their products and allow for cust
 * git
 * Rubocop
 * Faker
+* Devise
+* Simplecov
+* bootstrap
 * C8H10N4O2
 
 * * *
@@ -37,20 +40,18 @@ This is a website for "Kent Farms" to showcase their products and allow for cust
 Initial Specs:
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| Should allow a user to input a product with a name, price, and county of origin  | Apple, 1.99, United States | Product appears in a clickable list. |
-| Should allow a user to input a review for a product with an author, content, and rating | name: Jane, review: "These apples were amazing. They were juicy with a crisp taste", 5 | Review will show up on product with rating |
-| Users should have ability to update product names entered | original Product: Apple, new name: Oranges | Oranges will show on the product page |
-| Users should have ability to update product prices entered | original price: 1.99, new price: 2.99 | The product's price will be updated to 2.99 |
-| Users should have ability to update product country entered | original country: United States, new name: Japan | Japan will show as the country of origin on product page |
-| Users should have ability to update review authors entered | original author: Jane, new author: Jennifer | Jennifer will show on the product page |
-| Users should have ability to update review ratings entered | original review: 3, new review: 5 | Review rating of 5 will show when rating is clicked on|
-| Users should have ability to update review content entered | original content: These apples were super delicious!, new content: These apples were super delicious and I loved the color! | clicking on the review will show the updated content body |
-| Users should have ability to delete products entered | click Delete on the product page | This removes the product and associated reviews from the products page and DB |
-| Users should have ability to delete reviews entered | click Delete on the review page | This removes the review from the products page and DB |
+| Should allow an admin to input a product with a name, price, and county of origin  | Apple, 1.99, United States | Product appears in a clickable list. |
+| Should allow a user to input a review for a product with content and a rating | review: "These apples were amazing. They were juicy with a crisp taste", 5 | Review will show up on product with rating |
+| Admins should have ability to update product names entered | original Product: Apple, new name: Oranges | Oranges will show on the product page |
+| Admins should have ability to update product prices entered | original price: 1.99, new price: 2.99 | The product's price will be updated to 2.99 |
+| Admins should have ability to update product country entered | original country: United States, new name: Japan | Japan will show as the country of origin on product page |
+| Admins should have ability to update reviews | Click edit and change any field on a use review  | Review is updated |
+| Admins should have ability to delete products entered | click Delete on the product page | This removes the product and associated reviews from the products page and DB |
 | Users should be able to see details of a product when clicking on it | Click on the Apples | This brings up a page for Apples and shows all of the details and reviews |
 | Should have validation checks for all fields are filled out, including rating | Apples entered a second time | This will throw and error any time a user attempts to do double entry of an item |
 | Review content should be between 50 and 250 characters | User attempts to enter a review of 10 characters  | This will keep the user from saving their review because it isn't within greater than 50 characters |
 | All product titles should be automatically capitalized | Entry of apples | Product should will show as Apples. |
+| Users should be able to create an account and login | Email: name@email.com, Password:P@$$w0rd | Navbar will show name@email.com logged in. |
 
 * * *
 
@@ -146,19 +147,38 @@ rails s
 
 This will launch a local host via Rails. You should be able to navigate to http://localhost:3000/ to see the site locally.
 
+* To test admin functionality you will need to create and admin user. You can do so by creating a new user via the rails admin with the following:
+``` bash
+rails c
+```
+once this has pulled up the rails console you can create an admin user by pasting in the folling:
+```ruby
+User.create!(
+    email: 'superman@krpyton.com',
+    password: 'admin123',
+    admin: true
+)
+```
+
 ## To dos
 
-* Figure out how to install bootstrap.
+* Update CSS on navbar to give it better colors in line with the rest of the site.
+* Make the product page a little nice rather than a bullet point list.
+* Add active storage so admins can add pictures to products
+* Allow users to update or delete their reviews
+* Add timestamps to reviews so that they can be sorted.
+* Add a search for products.
+* Add an average rating for each product.
 
 ## Bugs
 
-* Bootstrap gem and its dependencies will not install properly.
+* When username is enabled it doesn't properly capture the name when signing up and throws an error.
 
 ## Resources
 * [Smallville Wiki](https://smallville.fandom.com/wiki/Kent_Farm)
 * [DC Comics](https://www.dccomics.com/)
 * [w3Schools](https://www.w3schools.com/)
-* [Coolors](https://coolors.co/f7ebec-ddbdd5-ac9fbb-59656f-1d1e2c)
+* [Coolors](https://coolors.co/564138-2e86ab-f6f5ae-f5f749-f24236)
 * [stackoverflow](https://stackoverflow.com/)
 
 * * *
