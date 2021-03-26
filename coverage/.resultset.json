@@ -912,6 +912,53 @@
           null
         ]
       },
+      "/home/jmstump/Repos/rails/specialty_foods/config/initializers/rails_admin.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/jmstump/Repos/rails/specialty_foods/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
@@ -1191,6 +1238,6 @@
         ]
       }
     },
-    "timestamp": 1616781107
+    "timestamp": 1616784876
   }
 }
