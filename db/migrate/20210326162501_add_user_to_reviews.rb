@@ -1,6 +1,6 @@
 class AddUserToReviews < ActiveRecord::Migration[5.2]
   def change
-    remove_column :reviews, :authors
-    add_column :reviews, :user_id
+    add_column :reviews, :user_id, :integer
+    remove_column :reviews, :author, :string
   end
 end
