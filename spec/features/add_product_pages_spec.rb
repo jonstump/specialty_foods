@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-
-describe 'the add product process' do
+describe 'the add product process as admin' do
   before (:each) do
     user = User.create!(:email => 'superman@email.com', :password => 'krypton', :admin => true)
     login_as(user, :scope => :user)
@@ -37,5 +36,16 @@ describe 'the add product process' do
     fill_in 'Country of origin', :with => 'Italy'
     click_on 'Create Product'
     expect(page).to have_content "Price can't be blank"
+  end
+end
+
+describe 'tests that a regular user cannot add a product' do
+  before(:each) do
+    user = User.create!(:email => 'oliver@queenindustries.com', :password => 'dinah_lance')
+    login_as(user, :scope => :user)
+  end
+  it 'does not show add product for a standard user' do
+    visit products_path
+    expect(page). to have_no_content 'create new product'
   end
 end
