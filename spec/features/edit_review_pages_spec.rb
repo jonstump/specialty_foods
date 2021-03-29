@@ -15,13 +15,17 @@ describe 'test the edit review process' do
     fill_in 'Rating', with: '5'
     fill_in 'Content body', with: 'These are perfect for practicing shooting my bow. They are also delicious!'
     click_on 'Create Review'
-    click_link '1'
+    within('#review', :visible => false) do
+      click_link 'superman@email.com'
+    end
     click_link 'Edit review'
     fill_in 'Rating', with: '4'
     fill_in 'Content body', with: 'Wow these are the best apples ever. They are super crisp and delicious!'
     click_on 'Update Review'
     expect(page).to have_content 'Review successfully updated'
-    click_on '1'
+    within('#review', :visible => false) do
+      click_link 'superman@email.com'
+    end
     expect(page).to have_content '4'
     expect(page).to have_content 'Wow these are the best apples ever. They are super crisp and delicious!'
   end
@@ -31,7 +35,9 @@ describe 'test the edit review process' do
     fill_in 'Rating', with: '5'
     fill_in 'Content body', with: 'These are perfect for practicing shooting my bow. They are also delicious!'
     click_on 'Create Review'
-    click_link '1'
+    within('#review', :visible => false) do
+      click_link 'superman@email.com'
+    end
     click_link 'Edit review'
     fill_in 'Rating', with: ' '
     click_on 'Update Review'
@@ -43,7 +49,9 @@ describe 'test the edit review process' do
     fill_in 'Rating', with: '5'
     fill_in 'Content body', with: 'These are perfect for practicing shooting my bow. They are also delicious!'
     click_on 'Create Review'
-    click_link '1'
+    within('#review', :visible => false) do
+      click_link 'superman@email.com'
+    end
     click_link 'Edit review'
     fill_in 'Content body', with: '  '
     click_on 'Update Review'

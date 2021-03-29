@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'the delete review process' do
-  it 'deletes a product' do
+  it 'deletes a review' do
     user = User.create!(email: 'superman@email.com', password: 'krypton', admin: true)
     login_as(user, scope: :user)
     @product = Product.new({ name: 'Apple', price: '1.99', country_of_origin: 'United States' })
@@ -12,7 +12,9 @@ describe 'the delete review process' do
     fill_in 'Rating', with: '5'
     fill_in 'Content body', with: 'These are perfect for practicing shooting my bow. They are also delicious!'
     click_on 'Create Review'
-    click_link '1'
+    within('#review', :visible => false) do
+      click_link 'superman@email.com'
+    end
     click_on 'Delete review'
     expect(page).to have_content 'Review successfully deleted'
   end

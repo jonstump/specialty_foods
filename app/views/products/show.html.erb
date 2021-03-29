@@ -2,20 +2,21 @@
 <h2>$<%= @product.price %></h2>
 <h2><%= @product.country_of_origin %></h2>
 
-<% if @product.reviews.any? %>
-  <h3>Here are the reviews for this product:</h3>
+<div id="review">
+  <% if @product.reviews.any? %>
+    <h3>Here are the reviews for this product:</h3>
 
-  <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.user.email, product_review_path(@product, review) %>
-      </li>
-    </ul>
+    <% @product.reviews.each do |review| %>
+      <ul>
+        <li>
+          <%= link_to review.user.email, product_review_path(@product, review) %>
+        </li>
+      </ul>
+    <% end %>
+  <% else %>
+    <p>No reviews are listed for this product.</p>
   <% end %>
-<% else %>
-  <p>No reviews are listed for this product.</p>
-<% end %>
-
+</div>
 <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 
 <% if current_user && current_user.admin %>
